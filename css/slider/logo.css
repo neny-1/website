@@ -1,0 +1,71 @@
+
+*{
+	box-sizing: border-box;
+}
+
+.logo-slbody .container {
+overflow: hidden;
+height: 200px;
+}
+.logo-slbody .container .cortain{
+user-select: none;
+position: relative;
+overflow: hidden;
+height: 100%;
+}
+.logo-slbody .container .cortain .convoy{
+float: left;
+height: 100%;
+}
+.logo-slbody .container .cortain .convoy .content{
+border-radius: 5px;
+float: left;
+position: relative;
+height:100%;
+}
+.logo-slbody .container .cortain .convoy .content img{
+width: 100%;
+height:100%;
+user-select: none;
+}
+.logo-slbody .buttons .prev,.logo-slbody .buttons .next{
+color: silver;
+cursor: pointer;
+text-align: center;
+position: absolute;
+transition:all 0.4s ease-in-out;
+font-size: 30px;
+}
+.logo-slbody .buttons .prev{
+left: 5px;
+top: 40%;
+}
+.logo-slbody .buttons .next{
+right: 5px;
+top: 40%;
+}
+.logo-slbody .buttons .hidebtn{
+display: none;
+}
+
+@media (max-width: 768px) {
+    .logo-slbody .container{
+    width:100%;
+    }
+    .logo-slbody .container .cortain .prev ,.cortain .next{
+    display: none;
+    }
+    
+}
+@media (min-width: 768px) {
+    .logo-slbody .container{
+    width:100%;
+    }
+    
+}
+@media (min-width: 991px) {
+    .logo-slbody .container{
+    width:100%;
+
+    }
+}/* end media */

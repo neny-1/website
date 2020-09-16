@@ -1,0 +1,1 @@
+function neny(){console.log("hi")}neny();var bodyWidth=document.querySelector("body"),smallWidth="1080px",largWidth="1440px",fullWidth="100%";window.innerWidth>=1080&&(bodyWidth.style.width=fullWidth);

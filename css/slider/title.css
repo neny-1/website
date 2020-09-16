@@ -1,0 +1,82 @@
+.title-slbody .container {
+width:100%;
+overflow: hidden;
+}
+.title-slbody .container .cortain{
+user-select: none;
+position: relative;
+overflow: hidden;
+height: 100%;
+}
+.title-slbody .container .cortain .convoy{
+float: left;
+height: 100%;
+width: 100%;
+}
+.title-slbody .container .cortain .convoy .content{
+border-radius: 5px;
+height:auto;
+float: left;
+position: relative;
+height: 100%;
+width: 100%;
+}
+
+
+.title-slbody .container .cortain .convoy .content img{
+height:80%;
+width: 100%;
+user-select: none;
+}
+.title-slbody .container .cortain .convoy .content .data{
+background: whitesmoke;
+font-size: 18px;
+font-weight: bold;
+color: #525252;
+margin-top: -3px;
+padding: 8px 12px 10px;
+font-family: none;
+}
+.title-slbody .container .cortain .convoy .content .data .price {
+margin: 0;
+}
+.title-slbody .container .cortain .convoy .content .data .title{
+margin-bottom: 7px;
+display: block;
+font-size: 17px;
+}
+
+.title-slbody .buttons .prev,.title-slbody .buttons .next{
+color: silver;
+cursor: pointer;
+text-align: center;
+position: absolute;
+transition:all 0.4s ease-in-out;
+font-size: 30px;
+}
+.title-slbody .buttons .hidebtn{
+display: none;
+}
+@media (max-width: 768px) {
+    .title-slbody .container{
+    width:100%;
+    }
+    .title-slbody .buttons .prev ,.title-slbody .buttons .next{
+    display: none;
+    }
+    
+}
+@media (min-width: 768px) {
+    .title-slbody .container{
+    width:100%;
+    }
+}
+@media (min-width: 991px) {
+    .title-slbody .container{
+    width:100%;
+    height:400px;
+    }
+}/* end media */
+/*
+
+*/
