@@ -1,39 +1,163 @@
 <!-- 
 this slider for product details when user hover over small img this image will Appears in large div (large image)
 -->
-<div class="details-slbody">
-<div class="pc-details"><!--hide on mobile screen -->
-<div class="lg-img"><!--main 'larg' img -->
-<img src="img/1.jpg" class="active">
-<img src="img/2.jpg">
-<img src="img/3.jpg">
-<img src="img/4.jpg">
-<img src="img/5.jpg">
-<img src="img/6.jpg">
-<img src="img/7.jpg">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+body{
+margin:0;
+font-family: sans-serif;
+}
+*{
+box-sizing: border-box;
+}
+.details-slbody{
+background: yellow;
+padding: 14px;
+width: 1080px;
+height: auto;
+display: flex;
+overflow: hidden;
+}
+.details-slbody .pc-details{
+width: 670px;
 
-</div>
-<div class="sm-img"><!--small img-->
-<img src="img/2.jpg">
-<img src="img/3.jpg">
-<img src="img/4.jpg">
-<img src="img/5.jpg">
-<img src="img/6.jpg">
-<img src="img/7.jpg">
-</div>
-</div>
+}
+.details-slbody .pc-details .lg-img{
+position:relative;
+}
+.details-slbody .pc-details .lg-img img{
+width: 100%;
+position: absolute;
+display: none;
+}
+.details-slbody .pc-details .lg-img .active{
+position: relative;
+display: block;
+}
+.details-slbody .pc-details .sm-img {
+display: flex;
+}
+.details-slbody .pc-details .sm-img img{
+width: 100px;
+margin-left: 14px;
+margin-top: 14px;
+}
+.details-slbody .pc-details .sm-img :first-child{
+margin-left:0;
+}
+.details-slbody .details-info{
+width: 368px;
+background-color: #FFF;
+margin-left: 14px;
+padding:20px;
+}
+.details-slbody .details-info .product{
+font-size: 21px;
+text-transform: capitalize;
+font-weight: bold;
+margin:0;
+}
+.details-slbody .details-info .dsc{
+margin-top: 6px;
+color: #c7c3c3;
+}
+.details-slbody .details-info .availabe{
+font-style: italic;
+color: #766b6b;
+margin-bottom: 0px;
+margin-top: 30px;
+}
+/*media query */
+@media(max-width:1080px){
+.details-slbody{
+display: block;
+width: 100%;
+}
+.details-slbody .pc-details{
+width: 100%;
+margin-bottom: 14px;
+}
+.details-slbody .pc-details .lg-img .active{
+width: 100%;
+}
+.details-slbody .pc-details .sm-img img{
+width: calc( (100% - 70px)/6 );
+}
+.details-slbody .details-info{
+width:100%;
+margin-left:0;
+}
+}
+    </style>
+</head>
+<body>
+    <div class="details-slbody">
+    <div class="pc-details"><!--hide on mobile screen -->
+    <div class="lg-img"><!--main 'larg' img -->
+    <img src="../../img/1.jpg" class="active">
+    <img src="../../img/2.jpg">
+    <img src="../../img/3.jpg">
+    <img src="../../img/4.jpg">
+    <img src="../../img/5.jpg">
+    <img src="../../img/6.jpg">
+    <img src="../../img/7.jpg">
+    
+    </div>
+    <div class="sm-img"><!--small img-->
+    <img src="../../img/2.jpg">
+    <img src="../../img/3.jpg">
+    <img src="../../img/4.jpg">
+    <img src="../../img/5.jpg">
+    <img src="../../img/6.jpg">
+    <img src="../../img/7.jpg">
+    </div>
+    </div>
+    
+    <div class="details-info"><!--show on all screen -->
+    <p class="product">tomato class 1</p>
+    <p class="dsc">high quality for salads and sausce</p>
+    <p class="availabe">Available in our stores</p>
+    <ul class="stores">
+    <li><a href="#">Cairo</a></li>
+    <li><a href="#">Alexandria</a></li>
+    <li><a href="#">Luxor</a></li>
+    <li><a href="#">Hurghada</a></li>
+    <li><a href="#">Aswan</a></li>
+    </ul>
+    </div>
+    
+    </div>
+    <script>
+        var smImg=Array.from(document.querySelectorAll('.pc-details .sm-img img') );
+var lgImg=Array.from(document.querySelectorAll('.pc-details .lg-img img') );
 
-<div class="details-info"><!--show on all screen -->
-<p class="product">tomato class 1</p>
-<p class="dsc">high quality for salads and sausce</p>
-<p class="availabe">Available in our stores</p>
-<ul class="stores">
-<li><a href="#">Cairo</a></li>
-<li><a href="#">Alexandria</a></li>
-<li><a href="#">Luxor</a></li>
-<li><a href="#">Hurghada</a></li>
-<li><a href="#">Aswan</a></li>
-</ul>
-</div>
+for(var i=0;i<smImg.length;i++){
+smImg[i].setAttribute('img-number',i+1);//set img-number attr to sm img
+smImg[i].onmouseenter=function(){ //on mouse enter
+var showImg=this.getAttribute('img-number');
+removeActive();
+lgImg[showImg].classList.add('active');
+}
 
-</div>
+smImg[i].onmouseleave=function(){	//on mouse leave
+removeActive()
+addActiveDefault()
+}
+}
+//remove active class from all img
+function removeActive(){
+for(var i=0;i<lgImg.length;i++){
+lgImg[i].classList.remove('active');
+}
+}
+//add active class to default img
+function addActiveDefault(){
+lgImg[0].classList.add('active');
+}
+    </script>
+</body>
+</html>

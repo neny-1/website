@@ -230,3 +230,27 @@ function hideBtn(Status){
 		productNextBtn.classList.add('hidebtn');
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function neny(){
+console.log('hi');
+}
+neny();
+var bodyWidth = document.querySelector('body'),
+smallWidth = 1080+'px',
+largWidth = 1440+'px',
+fullWidth = 100+'%';
+bodyWidth.style.width=smallWidth;
